@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "BaseTabBarController.h"
+#import  "GuideViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    self.window =[[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+//    BaseTabBarController *base =[[BaseTabBarController alloc]init];
+//    self.window.rootViewController =base;
+    
+    //1、判断第一次进来 -》 启动界面 2、如果不是呢？ 直接进入RootTabBarController
+    //启动界面点击完成之后 进入RootTabBarController
+    
+    //沙盒
+//    NSLog(@"%@",NSHomeDirectory() );
+    
+    //沙盒当中取标记
+    BOOL flag = [[NSUserDefaults standardUserDefaults] boolForKey:kFirstStartFlag];
+    //判断
+    
+    //进入不同的选择
+    if (flag) {
+        self.window.rootViewController = [[BaseTabBarController alloc] init];
+    }else{
+        self.window.rootViewController = [[GuideViewController alloc] init];
+        //存入沙盒当中的偏好设置里面的plist文件当中 千万不要忘了同步
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kFirstStartFlag];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
     return YES;
 }
 

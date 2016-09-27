@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ssn-bg-LOR">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--影院-->
+        <scene sceneID="5KA-dx-Ylz">
+            <objects>
+                <viewController id="qOa-88-F2C" customClass="CinemaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9gX-Pt-Zys"/>
+                        <viewControllerLayoutGuide type="bottom" id="a2O-CD-GWX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jau-Sr-Ube">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-OT-z54">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qOa-88-F2C" id="W7L-bU-h8L"/>
+                                    <outlet property="delegate" destination="qOa-88-F2C" id="Afv-GL-VQ7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gIf-OT-z54" firstAttribute="leading" secondItem="jau-Sr-Ube" secondAttribute="leadingMargin" constant="-20" id="Byj-hd-B0R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIf-OT-z54" secondAttribute="trailing" constant="-20" id="i0z-2y-8xH"/>
+                            <constraint firstItem="gIf-OT-z54" firstAttribute="top" secondItem="9gX-Pt-Zys" secondAttribute="bottom" id="pDg-2D-XZi"/>
+                            <constraint firstItem="a2O-CD-GWX" firstAttribute="top" secondItem="gIf-OT-z54" secondAttribute="bottom" id="s0y-lz-Nzj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="影院" id="loE-7r-u1C"/>
+                    <connections>
+                        <outlet property="cinemaTableView" destination="gIf-OT-z54" id="3o9-N1-Mih"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7e2-w5-bDv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="300" y="376"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="rtn-ET-e7r">
+            <objects>
+                <navigationController id="ssn-bg-LOR" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZIe-mh-gSq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qOa-88-F2C" kind="relationship" relationship="rootViewController" id="g5p-OK-O04"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rh-kF-HIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-403" y="370"/>
+        </scene>
+    </scenes>
+</document>

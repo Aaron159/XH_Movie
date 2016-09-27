@@ -1,0 +1,28 @@
+//
+//  Movie.pch
+//  项目一
+//
+//  Created by mac51 on 16/4/10.
+//  Copyright © 2016年 Aaron. All rights reserved.
+//
+
+//程序运行顺序
+//预编译指令（#什么的）- 编译 -  汇编 - 链接 - 运行（运行的程序就是一段二进制码）
+
+#ifndef Movie_pch
+#define Movie_pch
+
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+
+
+#import "UIImageView+WebCache.h"
+#import "UIViewExt.h"
+#import "UIView+ViewController.h"
+#import "MBProgressHUD.h"
+#import "SDImageCache.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Movie_pch */

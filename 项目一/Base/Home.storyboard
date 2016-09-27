@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="4iX-YG-jRp">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation Controller-->
+        <scene sceneID="LQO-Jb-gHZ">
+            <objects>
+                <navigationController id="4iX-YG-jRp" customClass="BaseNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7cV-Me-771">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CXV-xd-Nu5" kind="relationship" relationship="rootViewController" id="yeq-47-4MQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pP5-63-SsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-941.25" y="411.97183098591546"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="yb9-Zk-ZcD">
+            <objects>
+                <viewController id="CXV-xd-Nu5" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gre-nj-6Qb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mob-g6-cl3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aNc-Rv-6f3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ql7-TF-kYz">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CXV-xd-Nu5" id="xBd-68-2HA"/>
+                                    <outlet property="delegate" destination="CXV-xd-Nu5" id="aHW-SO-ZGH"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UXX-r8-ueR" customClass="PostView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ql7-TF-kYz" firstAttribute="leading" secondItem="aNc-Rv-6f3" secondAttribute="leadingMargin" constant="-20" id="3bf-1k-chw"/>
+                            <constraint firstItem="mob-g6-cl3" firstAttribute="top" secondItem="ql7-TF-kYz" secondAttribute="bottom" id="4Xc-UF-fge"/>
+                            <constraint firstItem="ql7-TF-kYz" firstAttribute="top" secondItem="gre-nj-6Qb" secondAttribute="bottom" id="DEV-8B-qOa"/>
+                            <constraint firstItem="mob-g6-cl3" firstAttribute="top" secondItem="ql7-TF-kYz" secondAttribute="bottom" id="GWd-Ng-v3y"/>
+                            <constraint firstItem="ql7-TF-kYz" firstAttribute="leading" secondItem="aNc-Rv-6f3" secondAttribute="leadingMargin" constant="-20" id="HKs-zR-6JQ"/>
+                            <constraint firstItem="mob-g6-cl3" firstAttribute="top" secondItem="UXX-r8-ueR" secondAttribute="bottom" id="Pqd-Fh-F51"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UXX-r8-ueR" secondAttribute="trailing" constant="-20" id="R9p-M0-wbo"/>
+                            <constraint firstItem="UXX-r8-ueR" firstAttribute="top" secondItem="gre-nj-6Qb" secondAttribute="bottom" id="eeM-tM-atF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ql7-TF-kYz" secondAttribute="trailing" constant="-20" id="rhj-MJ-HSU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ql7-TF-kYz" secondAttribute="trailing" constant="-20" id="tgX-7t-lHC"/>
+                            <constraint firstItem="ql7-TF-kYz" firstAttribute="top" secondItem="gre-nj-6Qb" secondAttribute="bottom" id="vJ0-HD-JLI"/>
+                            <constraint firstItem="UXX-r8-ueR" firstAttribute="leading" secondItem="aNc-Rv-6f3" secondAttribute="leadingMargin" constant="-20" id="yTe-Os-idh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="pSf-dq-jdk"/>
+                    <connections>
+                        <outlet property="listTableView" destination="ql7-TF-kYz" id="7oA-oY-dgF"/>
+                        <outlet property="postView" destination="UXX-r8-ueR" id="x4K-iI-kso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xr5-lQ-Fio" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-70" y="502"/>
+        </scene>
+    </scenes>
+</document>
